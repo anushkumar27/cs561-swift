@@ -17,10 +17,13 @@ final class MyLibraryTests: XCTestCase {
         // When
         myLibrary.isLucky(number, completion: { lucky in
             isLuckyNumber = lucky
+            print("I am in Line 20")
             expectation.fulfill()
+            print("I am in Line 23")
         })
 
         wait(for: [expectation], timeout: 5)
+        print("I am in Line 26")
 
         // Then
         XCTAssertNotNil(isLuckyNumber)
@@ -46,7 +49,6 @@ final class MyLibraryTests: XCTestCase {
         })
 
         wait(for: [expectation], timeout: 5)
-
         // Then
         XCTAssertNotNil(isLuckyNumber)
         XCTAssert(isLuckyNumber == true)

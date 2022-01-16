@@ -12,7 +12,9 @@ public class MyLibrary {
     public func isLucky(_ number: Int, completion: @escaping (Bool?) -> Void) {
         // Check the simple case first: 3, 5 and 8 are automatically lucky.
         if number == 3 || number == 5 || number == 8 {
+            print("I am in Line 15")
             completion(true)
+            print("I am in Line 16")
             return
         }
 
@@ -29,7 +31,9 @@ public class MyLibrary {
                     completion(true)
                 } else {
                     let isLuckyNumber = self.contains(temperature, "8")
+                    print("I am in Line 34 and value of isLucky is: \(isLuckyNumber)")
                     completion(isLuckyNumber)
+                     print("I am in Line 35")
                 }
             }
         }
